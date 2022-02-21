@@ -33,5 +33,10 @@ Then:
 [Database.py](https://github.com/simple-templates/api-userdb-template/blob/91472ef31e52b6f6b0ebab88ec82666d0ad897b0/Database.py) file
 3. Run the API and enjoy!
 
+## Details
+The API uses flask to get and send the requests, as well as to parse their header and body. 
+
+The database is compatible with PostgreSQL. The SQL queries to create the database on start are hard-coded into the Database wrapper, this is something I am aware could be improved.
+
 ## LICENSE
-GPLv3
+[GPLv3](https://github.com/simple-templates/api-userdb-template/blob/df40f8cfa5c3cfbeee45554c7b9141031f45d1eb/LICENSE)
