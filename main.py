@@ -2,8 +2,8 @@ import atexit
 from flask import Flask, request, jsonify
 from Database import DatabaseWrapper
 import os
-import sys
-from dotenv import load_dotenv
+from lib import load_dotenv
+
 
 app = Flask(__name__, static_folder="static")
 db = None
@@ -53,15 +53,14 @@ def newuser():
 if __name__ == '__main__':
     load_dotenv()
 
-    production = bool(os.getenv('PRODUCTION'))
+    production = bool(os.getenv("API_PRODUCTION"))
+    port = int(os.getenv("API_PORT"))
 
     db_passwd = os.getenv("DB_PASSWD")
     db_name = os.getenv("DB_NAME")
     db_user = os.getenv("DB_USER")
     db_port = os.getenv("DB_PORT")
     db_host = os.getenv("DB_HOST")
-
-    port = int(os.getenv("PORT"))
 
     db = DatabaseWrapper(db_name=db_name, db_user=db_user, db_passwd=db_passwd, db_port=db_port, db_host=db_host)
     atexit.register(db.close)  # On clean exit, close the connections
