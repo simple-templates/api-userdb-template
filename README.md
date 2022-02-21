@@ -10,7 +10,9 @@ It is also highly configurable just by changing the values in the `.env` file!
 ```
     API_PRODUCTION=False
     API_PORT=8000
-    
+
+    DB_PASSWD="password1234"
+    DB_NAME="database"
     DB_USER="postgres"
     DB_PORT=5432
     DB_HOST="localhost"
